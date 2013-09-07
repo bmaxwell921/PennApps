@@ -3,7 +3,6 @@ import urllib
 import cgi
 
 from google.appengine.api import users
-from lib import soundcloud
 
 import jinja2
 import webapp2
@@ -25,6 +24,7 @@ class MainHandler(webapp2.RequestHandler):
 	else:
 		url = users.create_login_url(self.request.uri)
 		url_linktext = 'Login'
+		guestbook_name = ""
 	template_values = {
 		'guestbook_name': guestbook_name, 
 		'url': url,

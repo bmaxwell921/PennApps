@@ -1,8 +1,43 @@
 <!DOCTYPE html>
-{% autoescape true %}
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    <script type="text/javascript">
+
+    // Use the Google API Loader script to load the google.picker script.
+    function loadPicker() {
+      gapi.load('picker', {'callback': createPicker});
+    }
+
+    // Use your own API developer key.
+    var developerKey = 'AIzaSyAylmnFEfHP51gM7x6LbSXRe2op0MknRwE';
+
+    // Create and render a Picker object for searching images.
+    function createPicker() {
+      var view = new google.picker.View(google.picker.ViewId.DOCS);
+      view.setMimeTypes("audio/aiff,audio/mpeg, audio/x-mpeg, audio/mpeg3, audio/x-mpeg3, audio/wav, audio/x-wav");    
+      var picker = new google.picker.PickerBuilder()
+          .enableFeature(google.picker.Feature.NAV_HIDDEN)
+          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+          .setAppId(801601951194)
+//          .setOAuthToken(AUTH_TOKEN) //Optional: The auth token used in the current Drive API session.
+          .addView(view)
+          .addView(new google.picker.DocsUploadView())
+          .setDeveloperKey(developerKey)
+          .setCallback(pickerCallback)
+          .build();
+       picker.setVisible(true);
+    }
+
+    // A simple callback implementation.
+    function pickerCallback(data) {
+      if (data.action == google.picker.Action.PICKED) {
+        var fileId = data.docs[0].id;
+        alert('The user selected: ' + fileId);
+      }
+    }
+    </script>
+
   </head>
   <body>
     <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
@@ -18,9 +53,9 @@
     </form>
 
     <a href="{{ url|safe }}">{{ url_linktext }}</a>
-
+    <div id="result"></div>
+    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
   </body>
 </html>
-{% endautoescape %}
 
 <script src="//js.live.net/v5.0/wl.js" type="text/javascript"></script>
