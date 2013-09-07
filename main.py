@@ -24,7 +24,7 @@ class MainHandler(webapp2.RequestHandler):
 	else:
 		url = users.create_login_url(self.request.uri)
 		url_linktext = 'Login'
-		guestbook_name = ""
+		guestbook_name = ''
 	template_values = {
 		'guestbook_name': guestbook_name, 
 		'url': url,
