@@ -12,7 +12,7 @@ class MainHandler(webapp2.RequestHandler):
 		self.response.write('Hello, ' + user.nickname())
 	else:
 		self.redirect(users.create_login_url(self.request.uri))
-        self.response.write('Hello world!')
+	        self.response.write('Hello world!')
 
 app = webapp2.WSGIApplication([('/', MainHandler)],
                               debug=True)
