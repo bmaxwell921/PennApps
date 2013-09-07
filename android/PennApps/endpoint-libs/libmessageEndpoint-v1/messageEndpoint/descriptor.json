@@ -1,13 +1,13 @@
 {
   "files": [
     {
-      "downloadUrl": "/downloads/messageEndpoint/v1/20130907063733/java/1.16.0-rc/testapp.com-messageEndpoint-v1-20130907063733-java-1.16.0-rc-sources.jar", 
-      "path": "testapp.com-messageEndpoint-v1-20130907063733-java-1.16.0-rc-sources.jar", 
+      "downloadUrl": "/downloads/messageEndpoint/v1/20130907074839/java/1.16.0-rc/testapp.com-messageEndpoint-v1-20130907074839-java-1.16.0-rc-sources.jar", 
+      "path": "testapp.com-messageEndpoint-v1-20130907074839-java-1.16.0-rc-sources.jar", 
       "type": "source", 
-      "timestamp": "2013-09-07 06:37"
+      "timestamp": "2013-09-07 07:48"
     }, 
     {
-      "path": "testapp.com-messageEndpoint-v1-20130907063733-java-1.16.0-rc.jar.properties", 
+      "path": "testapp.com-messageEndpoint-v1-20130907074839-java-1.16.0-rc.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -698,7 +698,7 @@
     }
   ], 
   "language_version": "1.16.0-rc", 
-  "revision": 20130907063733, 
+  "revision": 20130907074839, 
   "id": "messageEndpoint:v1", 
   "modulePath": "com/testapp"
 }

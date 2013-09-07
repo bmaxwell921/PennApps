@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"VkkzLg1qSf2dHM9_JADuPMcBnRo/cewBROrAzRrHxkTXTbBRTpca1_U\"",
+ "etag": "\"VkkzLg1qSf2dHM9_JADuPMcBnRo/hWhWEWuZ7JA63h1gdqYxWHpDeGU\"",
  "discoveryVersion": "v1",
  "id": "messageEndpoint:v1",
  "name": "messageEndpoint",
@@ -13,8 +13,8 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rpc",
- "rootUrl": "https://isuchatserver.appspot.com/_ah/api/",
- "rpcUrl": "https://isuchatserver.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://myapp.appspot.com/_ah/api/",
+ "rpcUrl": "https://myapp.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {

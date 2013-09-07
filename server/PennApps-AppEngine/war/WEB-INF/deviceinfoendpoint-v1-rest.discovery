@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"VkkzLg1qSf2dHM9_JADuPMcBnRo/r_Wfz-uSjI_ZJCYkKN3wOufZ-CA\"",
+ "etag": "\"VkkzLg1qSf2dHM9_JADuPMcBnRo/rZQQCyxQ0lNclP2SKLtOn-L-v8o\"",
  "discoveryVersion": "v1",
  "id": "deviceinfoendpoint:v1",
  "name": "deviceinfoendpoint",
@@ -13,9 +13,9 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://isuchatserver.appspot.com/_ah/api/deviceinfoendpoint/v1/",
+ "baseUrl": "https://myapp.appspot.com/_ah/api/deviceinfoendpoint/v1/",
  "basePath": "/_ah/api/deviceinfoendpoint/v1/",
- "rootUrl": "https://isuchatserver.appspot.com/_ah/api/",
+ "rootUrl": "https://myapp.appspot.com/_ah/api/",
  "servicePath": "deviceinfoendpoint/v1/",
  "batchPath": "batch",
  "parameters": {

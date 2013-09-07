@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"VkkzLg1qSf2dHM9_JADuPMcBnRo/cewBROrAzRrHxkTXTbBRTpca1_U\"",
+ "etag": "\"VkkzLg1qSf2dHM9_JADuPMcBnRo/hWhWEWuZ7JA63h1gdqYxWHpDeGU\"",
  "discoveryVersion": "v1",
  "id": "messageEndpoint:v1",
  "name": "messageEndpoint",
@@ -13,9 +13,9 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://isuchatserver.appspot.com/_ah/api/messageEndpoint/v1/",
+ "baseUrl": "https://myapp.appspot.com/_ah/api/messageEndpoint/v1/",
  "basePath": "/_ah/api/messageEndpoint/v1/",
- "rootUrl": "https://isuchatserver.appspot.com/_ah/api/",
+ "rootUrl": "https://myapp.appspot.com/_ah/api/",
  "servicePath": "messageEndpoint/v1/",
  "batchPath": "batch",
  "parameters": {
