@@ -3,6 +3,7 @@ import urllib
 import cgi
 
 from google.appengine.api import users
+from lib import soundcloud
 
 import jinja2
 import webapp2
