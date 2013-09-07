@@ -1,6 +1,7 @@
 import cgi
 
 from google.appengine.api import users
+from lib import soundcloud
 
 import webapp2
 
