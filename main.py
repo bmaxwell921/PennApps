@@ -6,6 +6,7 @@ from google.appengine.api import users
 
 import jinja2
 import webapp2
+import json
 
 import soundcloud
 
@@ -36,6 +37,15 @@ class MainHandler(webapp2.RequestHandler):
 	template = JINJA_ENVIRONMENT.get_template('index.html')
 	self.response.write(template.render(template_values))
 	
+class SkydriveUp(webapp2.RequestHandler):
+	def post(self):
+		self.response.write('Client side info: ');
+		numFiles = self.request.get('numFiles')
+		self.response.write("files: " + numFiles)
+
+		for i in range(int(numFiles)):
+			self.response.write(self.request.get('file' + str(i)))
+
 
 class Guestbook(webapp2.RequestHandler):
     def post(self):
@@ -49,5 +59,6 @@ class Guestbook(webapp2.RequestHandler):
 		self.redirect(users.create_login_url(self.request.uri))
 
 app = webapp2.WSGIApplication([('/', MainHandler),
-	('/sign', Guestbook),],
+	('/sign', Guestbook), ('/sdUpload', SkydriveUp),],
                               debug=True)
+

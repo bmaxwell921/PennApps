@@ -17,14 +17,15 @@
       var view = new google.picker.View(google.picker.ViewId.DOCS);
       view.setMimeTypes("audio/aiff,audio/mpeg, audio/x-mpeg, audio/mpeg3, audio/x-mpeg3, audio/wav, audio/x-wav");    
       var picker = new google.picker.PickerBuilder()
-          .enableFeature(google.picker.Feature.NAV_HIDDEN)
-          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
-          .setAppId(801601951194)
+//          .enableFeature(google.picker.Feature.NAV_HIDDEN)
+//          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+//          .setAppId(801601951194)
 //          .setOAuthToken(AUTH_TOKEN) //Optional: The auth token used in the current Drive API session.
           .addView(view)
-          .addView(new google.picker.DocsUploadView())
+//          .addView(new google.picker.DocsUploadView())
           .setDeveloperKey(developerKey)
           .setCallback(pickerCallback)
+	  .setOrigin('https' + '://' + 'soundclouduploader.appspot.com/')
           .build();
        picker.setVisible(true);
     }
@@ -96,3 +97,4 @@
 <script src="//js.live.net/v5.0/wl.js" type="text/javascript"></script>
 <script src='/js/sdfilepicker.js' type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
