@@ -12,10 +12,10 @@
     // Use your own API developer key.
     var developerKey = 'AIzaSyAylmnFEfHP51gM7x6LbSXRe2op0MknRwE';
 
-    // Create and render a Picker object for searching images.
+    // Create and render a Picker object for searching files.
     function createPicker() {
       var view = new google.picker.View(google.picker.ViewId.DOCS);
-      view.setMimeTypes("audio/aiff,audio/mpeg, audio/x-mpeg, audio/mpeg3, audio/x-mpeg3, audio/wav, audio/x-wav");    
+      view.setMimeTypes("audio/aiff, audio/mpeg, audio/x-mpeg, audio/mpeg3, audio/x-mpeg3, audio/wav, audio/x-wav");    
       var picker = new google.picker.PickerBuilder()
 //          .enableFeature(google.picker.Feature.NAV_HIDDEN)
 //          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
@@ -25,7 +25,7 @@
 //          .addView(new google.picker.DocsUploadView())
           .setDeveloperKey(developerKey)
           .setCallback(pickerCallback)
-	  .setOrigin('https' + '://' + 'soundclouduploader.appspot.com/')
+	  .setOrigin(window.location.protocol + '://' + window.location.host)
           .build();
        picker.setVisible(true);
     }
