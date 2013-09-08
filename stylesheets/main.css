@@ -1,4 +1,45 @@
 body {
-  font-family: Verdana, Helvetica, sans-serif;
-  background-color: #DDDDDD;
+	margin: 0px;
+	padding: 0px;
+	background-color: #ffffff;
+	text-align: center;
+	font-family: 'Bitter', serif;
+}
+
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.svg") format("svg");
+	src: url("flaticon.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1
+{
+	font-size: 4em;	
+	font-weight: 900;
+}
+
+h1 span
+{
+	color: #fa9915;
+}
+
+.content {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 25%;
+}
+
+.button img
+{
+	width: 100%;
+}
+
+.log a
+{
+	position:fixed;
+	bottom: 0px;
+	width: 100%;
 }

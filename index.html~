@@ -69,7 +69,7 @@
 			function upload() {
 
 				SC.connect(function(){
-					SC.post("/tracks", {track: { title: 'New Sound', asset_data: 'https://dl.dropboxusercontent.com/u/3942841/blues-walk.wav'}}, function(user, error){
+					SC.post("/tracks",{ title: 'New Sound', asset_data: 'https://dl.dropboxusercontent.com/u/3942841/blues-walk.wav'}, function(user, error){
 				    		if(error){
 				      			alert("Error: " + error.message);
 				    		}else{
@@ -83,6 +83,25 @@
 
 	</head>
 	<body>
+		<form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
+			<div>
+				<textarea name="content" rows="3" cols="60"></textarea>
+			</div>
+			<div>
+				<input type="submit" value="Sign Guestbook">
+			</div>
+		</form>
+
+		<hr>
+
+		<form>
+			Guestbook name:
+			<input value="{{ guestbook_name }}" name="guestbook_name">
+			<input type="submit" value="switch">
+		</form>
+
+		<a href="{{ url|safe }}">{{ url_linktext }}</a>
+		<div id="result"></div>
 		<div class="content">
 			<header>
 				<h1>SoundCloud Uploader<span>.</span></h1>
@@ -101,6 +120,7 @@
 </html>
 
 <script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="xvj2z2xsic745s1"></script>
+<script src="//js.live.net/v5.0/wl.js" type="text/javascript"></script>
 <script src='/js/sdfilepicker.js' type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
