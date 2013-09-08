@@ -83,25 +83,6 @@
 
 	</head>
 	<body>
-		<form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-			<div>
-				<textarea name="content" rows="3" cols="60"></textarea>
-			</div>
-			<div>
-				<input type="submit" value="Sign Guestbook">
-			</div>
-		</form>
-
-		<hr>
-
-		<form>
-			Guestbook name:
-			<input value="{{ guestbook_name }}" name="guestbook_name">
-			<input type="submit" value="switch">
-		</form>
-
-		<a href="{{ url|safe }}">{{ url_linktext }}</a>
-		<div id="result"></div>
 		<div class="content">
 			<header>
 				<h1>SoundCloud Uploader<span>.</span></h1>
