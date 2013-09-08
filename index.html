@@ -34,7 +34,7 @@
 			// Create and render a Picker object for searching files.
 			function createPicker() {
 				var view = new google.picker.View(google.picker.ViewId.DOCS);
-				view.setMimeTypes("audio/aiff, audio/mpeg, audio/x-mpeg, audio/mpeg3, audio/x-mpeg3, audio/wav, audio/x-wav");
+				view.setMimeTypes("audio/aiff,audio/mpeg,audio/x-mpeg,audio/mpeg3,audio/x-mpeg3,audio/wav,audio/x-wav");
 				var picker = new google.picker.PickerBuilder()
 				//          .enableFeature(google.picker.Feature.NAV_HIDDEN)
 				//          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
@@ -121,43 +121,6 @@
 				<a href="#" class="button button-block button-highlight button-large">Sign in to SoundCloud</a>
 			</div>
 		</div>
-<div id="downloadFile_div">PISS</div>
-<script>
-WL.init({client_id : '0000000040105199', redirect_uri: 'https://login.live.com/oauth20_desktop.srf'});
-WL.ui({
-    name: "skydrivepicker",
-    element: "downloadFile_div",
-    mode: "open",
-    select: "multi",
-    onselected: onDownloadFileCompleted,
-    onerror: onDownloadFileError
-});
-
-function onDownloadFileCompleted(response) {
-    var msg = "";
-    // For each folder selected...
-    if (response.data.folders.length > 0) {
-        for (folder = 0; folder < response.data.folders.length; folder++) {
-            // Use folder IDs to iterate through child folders and files as needed.
-            msg += "\n" + response.data.folders[folder].id;
-        }
-    }
-    // For each file selected...
-    if (response.data.files.length > 0) {
-        for (file = 0; file < response.data.files.length; file++) {
-            // Use file IDs to iterate through files as needed.
-            msg += "\n" + response.data.files[file].id;
-        }
-    }
-    document.getElementById("info").innerText =
-        "Selected folders/files:" + msg;
-};
-
-function onDownloadFileError(responseFailed) {
-    document.getElementById("info").innerText =
-        "Error getting folder/file info: " + responseFailed.error.message;
-}
-</script>
 
 	</body>
 </html>
