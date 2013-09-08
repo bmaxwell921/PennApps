@@ -6,7 +6,7 @@
 		ii) if not, send them to the login page
 */
 function attemptLogin() {
-	WL.init({client_id = '0000000040105199', redirect_uri: 'http://soundclouduploader.appspot.com'});
+	WL.init({client_id : '0000000040105199', redirect_uri: 'localhost:8080'});
 	WL.Event.subscribe("auth.login", onLogin);
 	WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
