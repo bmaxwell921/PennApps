@@ -6,7 +6,7 @@
 		ii) if not, send them to the login page
 */
 function attemptLogin() {
-	WL.init({client_id : '0000000040105199', redirect_uri: 'localhost:8080'});
+	WL.init({client_id : '0000000040105199', redirect_uri: 'http://soundclouduploader.appspot.com/'});
 	WL.Event.subscribe("auth.login", onLogin);
 	WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
@@ -32,4 +32,22 @@ function onSessionChange() {
 	}
 }
 
-
+function downloadFiles() {
+	WL.fileDialog({
+		mode: "open",
+		select: "multi"
+	}).then (function(response) {
+		var data = {};
+		data.numFiles = response.data.files.length;
+		if (response.data.files.length > 0) {
+			for (var file = 0; file < response.data.files.length; ++file) {
+				data["file" + file] = response.data.files[file].id; 
+			}
+		}
+		console.log(data);
+		var url = '/sdUpload';
+		$.post(url, data, function(derter, status) {
+			console.log(derter);
+		});
+	});
+}
