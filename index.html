@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
+
 		<link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css" />
 		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/buttons.css" />
-		
-		
+
 		<script type="text/javascript">
 			// Use the Google API Loader script to load the google.picker script.
 			function loadPicker() {
@@ -73,7 +72,8 @@
 		<form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
 			<div>
 				<textarea name="content" rows="3" cols="60"></textarea>
-</div>			<div>
+			</div>
+			<div>
 				<input type="submit" value="Sign Guestbook">
 			</div>
 		</form>
@@ -88,26 +88,18 @@
 
 		<a href="{{ url|safe }}">{{ url_linktext }}</a>
 		<div id="result"></div>
+		<div class="content">
+			<header>
+				<h1>SoundCloud Uploader<span>.</span></h1>
+			</header>
+			<div class="icons">
+				<span class="button-wrap"><a href="#" id="sdButton" onclick="attemptLogin()" class="button button-circle button-highlight"><img src="img/skydrive.png"></a></span>
+				<span class="button-wrap"><a href="#" onclick="loadPicker()" class="google button button-circle button-highlight"><img src="img/google5.png"></a></span>
+				<span class="button-wrap"><a href="#" onclick="dropboxDialog()" class="DropBox button button-circle button-highlight"><img src="img/dropbox.png"></a></span>
+				<span class="button-wrap"><a href="#" class="button button-circle button-highlight"><img src="img/mail.png"></a></span>
+				<span class="button-wrap"><a href="#" class="button button-circle button-highlight"><img src="img/apple3.png"></a></span>
 
-		<div>
-			<button id="sdButton" onclick="attemptLogin()">
-				SkyDrive
-			</button>
-			<button class="google" onclick="loadPicker()">
-				Google
-			</button>
-			<button class="DropBox" onclick="dropboxDialog()">
-				Dropbox
-			</button>
-		</div>
-
-		<div class="icons">
-			<span class="button-wrap"><a href="#" id="sdButton" onclick="attemptLogin()" class="button button-circle button-highlight"><img src="img/skydrive.png"></a></span>
-			<span class="button-wrap"><a href="#" onclick="loadPicker()" class="google button button-circle button-highlight"><img src="img/google5.png"></a></span>
-			<span class="button-wrap"><a href="#" onclick="dropboxDialog()" class="DropBox button button-circle button-highlight"><img src="img/dropbox.png"></a></span>
-			<span class="button-wrap"><a href="#" class="button button-circle button-highlight"><img src="img/mail.png"></a></span>
-			<span class="button-wrap"><a href="#" class="button button-circle button-highlight"><img src="img/apple3.png"></a></span>
-
+			</div>
 		</div>
 
 	</body>
