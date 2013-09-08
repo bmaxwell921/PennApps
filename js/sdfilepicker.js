@@ -7,15 +7,16 @@
 */
 function attemptLogin() {
 	WL.init({client_id : '0000000040105199', redirect_uri: 'http://soundclouduploader.appspot.com/'});
-	WL.Event.subscribe("auth.login", onLogin);
-	WL.Event.subscribe("auth.sessionChange", onSessionChange);
+	// WL.Event.subscribe("auth.login", onLogin);
+	// WL.Event.subscribe("auth.sessionChange", onSessionChange);
 
-	var session = WL.getSession();
-	if (session) {
-		console.log("SD: User is already logged in");
-	} else {
-		WL.login({scope: "wl.signin"});
-	}
+	// var session = WL.getSession();
+	// if (session) {
+	// 	console.log("SD: User is already logged in");
+	// } else {
+	// 	WL.login({scope: "wl.signin"});
+	// }
+	downloadFiles();
 }
 
 function onLogin() {
@@ -36,18 +37,20 @@ function downloadFiles() {
 	WL.fileDialog({
 		mode: "open",
 		select: "multi"
-	}).then (function(response) {
-		var data = {};
-		data.numFiles = response.data.files.length;
-		if (response.data.files.length > 0) {
-			for (var file = 0; file < response.data.files.length; ++file) {
-				data["file" + file] = response.data.files[file].id; 
-			}
-		}
-		console.log(data);
-		var url = '/sdUpload';
-		$.post(url, data, function(derter, status) {
-			console.log(derter);
-		});
+	}).then(function(response) {
+	// 	console.log("Doing shit");
+	// 	var data = {};
+	// 	data.numFiles = response.data.files.length;
+	// 	if (response.data.files.length > 0) {
+	// 		for (var file = 0; file < response.data.files.length; ++file) {
+	// 			console.log("Loopin");
+	// 			data["file" + file] = response.data.files[file].id; 
+	// 		}
+	// 	}
+	// 	console.log(data);
+	// 	var url = '/sdUpload';
+	// 	$.post(url, data, function(derter, status) {
+	// 		console.log(derter);
+	// 	});
 	});
 }
