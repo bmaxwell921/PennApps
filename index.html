@@ -2,6 +2,7 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+<script src="//js.live.net/v5.0/wl.debug.js" type="text/javascript"></script>
     <script type="text/javascript">
 
     // Use the Google API Loader script to load the google.picker script.
@@ -89,12 +90,52 @@
 		<button class="google" onclick="loadPicker()">Google</button>
 		<button class="DropBox" onclick="dropboxDialog()">Dropbox</button>
 	</div>	
+  
+<div id="downloadFile_div">PISS</div>
+<script>
+WL.init({client_id : '0000000040105199', redirect_uri: 'https://login.live.com/oauth20_desktop.srf'});
+WL.ui({
+    name: "skydrivepicker",
+    element: "downloadFile_div",
+    mode: "open",
+    select: "multi",
+    onselected: onDownloadFileCompleted,
+    onerror: onDownloadFileError
+});
+
+function onDownloadFileCompleted(response) {
+    var msg = "";
+    // For each folder selected...
+    if (response.data.folders.length > 0) {
+        for (folder = 0; folder < response.data.folders.length; folder++) {
+            // Use folder IDs to iterate through child folders and files as needed.
+            msg += "\n" + response.data.folders[folder].id;
+        }
+    }
+    // For each file selected...
+    if (response.data.files.length > 0) {
+        for (file = 0; file < response.data.files.length; file++) {
+            // Use file IDs to iterate through files as needed.
+            msg += "\n" + response.data.files[file].id;
+        }
+    }
+    document.getElementById("info").innerText =
+        "Selected folders/files:" + msg;
+};
+
+function onDownloadFileError(responseFailed) {
+    document.getElementById("info").innerText =
+        "Error getting folder/file info: " + responseFailed.error.message;
+}
+</script>
+
+
+
   </body>
 </html>
 
 
 <script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="xvj2z2xsic745s1"></script>
-<script src="//js.live.net/v5.0/wl.js" type="text/javascript"></script>
 <script src='/js/sdfilepicker.js' type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
