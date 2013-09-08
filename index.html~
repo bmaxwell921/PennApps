@@ -69,7 +69,7 @@
 			function upload() {
 
 				SC.connect(function(){
-					SC.post("/tracks", {track: { title: 'New Sound', asset_data: 'https://dl.dropboxusercontent.com/u/3942841/blues-walk.wav'}}, function(user, error){
+					SC.post("/tracks",{ title: 'New Sound', asset_data: 'https://dl.dropboxusercontent.com/u/3942841/blues-walk.wav'}, function(user, error){
 				    		if(error){
 				      			alert("Error: " + error.message);
 				    		}else{
