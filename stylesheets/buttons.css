@@ -638,7 +638,7 @@ button.button:disabled {
   font-size: 19px;
   height: 38.4px;
   line-height: 38.4px;
-  padding: 0px 30.72px;
+  padding: 0px 0px; /*30.72px;*/
 }
 
 /* line 245, ../scss/partials/_buttons.scss */
